@@ -1,0 +1,6 @@
+home.file = {
+  "wallpaper.png" = {
+    target = "Wallpaper/wallpaper.png";
+    source = ./wallpaper.png;
+  }
+}
