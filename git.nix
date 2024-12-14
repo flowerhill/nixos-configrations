@@ -10,9 +10,11 @@
     matchBlocks = {
       "github.com" = {
         identityFile = "~/.ssh/id_ed25519";
-	extraOptions = {
+	extraConfig= ''
 	  AddKeysToAgent = "yes";
-	};
+	  # ssh-askpassを無効化
+	  SSH_ASKPASS=
+	'';
       };
     };
   };
