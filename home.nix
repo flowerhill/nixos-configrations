@@ -5,6 +5,7 @@
     ./development.nix
     ./browser.nix
     ./apps.nix
+    ./git.nix
   ];
   home = rec { # recでAttribute Set内で他の値を参照できるようにする
     username="hanaokat";
@@ -12,6 +13,11 @@
     stateVersion = "21.11";
   }; 
   programs.home-manager.enable = true; # home-manager自身でhome-managerを有効化
+
+  programs.ssh = {
+    enable = true;
+    startAgent = true;
+  };
   services.ssh-agent.enable = true;
 
   nixpkgs.config.allowUnfree = true;
