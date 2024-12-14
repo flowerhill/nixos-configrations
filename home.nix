@@ -12,6 +12,7 @@
     stateVersion = "21.11";
   }; 
   programs.home-manager.enable = true; # home-manager自身でhome-managerを有効化
+  services.ssh-agent.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 #  home.file = {
