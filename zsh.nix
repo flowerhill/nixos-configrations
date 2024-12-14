@@ -3,7 +3,7 @@
     enable = true;
     autocd = true;
     enableCompletion = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
       cat = "bat";
@@ -11,7 +11,7 @@
       ls = "eza --icons always --classify always";
       la = "eza --icons always --classify always --all";
       ll = "eza --icons always --long --all --git";
-      ls = "eza --icons always --classify always --tree";
+      tree = "eza --icons always --classify always --tree";
     };
   };
 }

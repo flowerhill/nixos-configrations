@@ -187,8 +187,8 @@
   # Steamをインストール
   # Proton ExperimentalはSteamの設定から有効化する
   programs.steam = {
-    elable = true;
-    remotePlay.openFirewal = true;
+    enable = true;
+    remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
 
@@ -214,7 +214,10 @@
   # 各種設定
   i18n.inputMethod = {
     enabled = "fcitx5";
-    fcitx5.addons = [pkgs.fcitx5-mozc];
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      fcitx5-gtk
+    ];
   };
 
 # Steamのフォントが文字化けするので、フォント設定を追加
@@ -267,19 +270,6 @@
           name = "CapsLock is dead";
           remap = {
             CapsLock = "Ctrl_L";
-          };
-        }
-      ];
-      keymap = [
-        {
-          # Ctrl + HがどのアプリケーションでもBackspaceになるように変更
-          name = "Ctrl+H should be enabled on all apps as BackSpace";
-          remap = {
-            C-h = "Backspace";
-          };
-          # 一部アプリケーション（ターミナルエミュレータ）を対象から除外
-          application = {
-            not = ["Alacritty" "Kitty" "Wezterm"];
           };
         }
       ];
